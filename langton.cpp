@@ -8,6 +8,9 @@ int
 main()
 {
 
+  
+  WorldCoord coords = {1,2};
+
   const int size = 1200;
 
   World w(boost::extents[100][100]);
@@ -22,9 +25,9 @@ main()
   cv::namedWindow("Langton", 0);
   cv::imshow("Langton", m);
 
-  Ant a(m.rows/2, m.cols/2, 0, w);
+  Ant a({{m.rows/2, m.cols/2}}, 0, w);
 
-  Ant b(rand()%m.rows, rand()%m.cols, 4, w);
+  Ant b({{rand()%m.rows, rand()%m.cols}}, 4, w);
 
   char c = 'a';
   long iter = 0;

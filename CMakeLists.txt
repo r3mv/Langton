@@ -11,9 +11,10 @@ SET(LANGTON_SRCS  world.cpp
 ant.cpp
 )
 
+# because my gcc is aging
+add_definitions("-std=c++0x")
 
 ADD_EXECUTABLE(langton ${LANGTON_SRCS} langton.cpp)
 TARGET_LINK_LIBRARIES(langton ${OpenCV_LIBS})
-
 
 ADD_EXECUTABLE(TestWorld ${LANGTON_SRCS} testWorld.cpp)

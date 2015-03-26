@@ -10,13 +10,14 @@ class Ant
 
 public:
 
-  Ant(int x, int y, int dir,  World &grid);
+  Ant(WorldCoord start, int dir,  World &grid);
   
   virtual ~Ant();
 
   void
   iterate();
-  
+
+    
 private:
   void
   rotate(unsigned char);
@@ -29,8 +30,8 @@ private:
 
 private:
 
-  int x;
-  int y;
+  WorldCoord coords;
+
   int dir;
   
   //cv::Mat &grid;
